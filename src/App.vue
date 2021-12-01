@@ -1,6 +1,6 @@
 <template>
   <div>
-   <Header />
+   <Header @attivaSearch = "ricercaDeiFilm" />
    <Main :propFilm="films" />
   </div>
 </template>
@@ -19,12 +19,13 @@ export default {
   },
   data() {
         return{
-            films: []
+            films: [],
+            title: ''
         }
     },
     methods: {
         getApi(){
-            axios.get('https://api.themoviedb.org/3/search/movie?api_key=db7794d74f6d8ca357ea23c659300bfb&query=ritorno+al+futuro&language=it-IT')
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=db7794d74f6d8ca357ea23c659300bfb&query=${this.title}&language=it-IT`)
             .then( r => {
                 console.log('response',r);
                 this.films = r.data.results;
@@ -33,6 +34,11 @@ export default {
             }).catch( e => {
                 console.log('e',e);
             })
+        },
+        ricercaDeiFilm(textSearch){
+          console.log(textSearch);
+          this.title = textSearch;
+          this.getApi();
         }
     },
     mounted() {

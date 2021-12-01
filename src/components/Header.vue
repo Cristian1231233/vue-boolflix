@@ -3,9 +3,9 @@
       <div class="logo">Boolflix</div>
       <div class="searchbar-botton">
           <div class="searchbar">
-              <input type="text" placeholder="cerca un film"> 
+              <input type="text" placeholder="cerca un film" v-model="textSearch" @keyup.enter="$emit('attivaSearch', textSearch)"> 
           </div>
-          <div class="botton">
+          <div class="botton" @click="$emit('attivaSearch', textSearch)">
               <button>cerca</button>
           </div>
       </div>
@@ -14,7 +14,12 @@
 
 <script>
 export default {
-    nome: 'Header'
+    nome: 'Header',
+    data(){
+        return{
+            textSearch: ''
+        }
+    }
 }
 </script>
 

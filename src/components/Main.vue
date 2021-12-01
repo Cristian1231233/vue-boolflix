@@ -8,9 +8,9 @@
       >
       <ul>
           <li>{{film.title}}</li>
-          <li>Titolo originale</li>
-          <li>Lingua</li>
-          <li>Voto</li>
+          <li>{{film.original_title}}</li>
+          <li>{{film.original_language}}</li>
+          <li>{{film.vote_average}}</li>
       </ul>
   </div>
       </div>
@@ -24,9 +24,7 @@
 
 export default {
     nome: 'Main',
-    data(){
-        
-    },
+    
     props:{
         propFilm: Array
     }
@@ -38,11 +36,15 @@ export default {
 
 .container-menu{
     display: flex;
+    flex-wrap: wrap;
     margin-top: 15px;
 }
 .card{
     width: 200px;
     background-color: green;
+    ul li{
+        list-style: none;
+    }
     
 }
 
