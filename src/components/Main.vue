@@ -1,42 +1,48 @@
 <template>
   <div class="menu">
       <div class="container-menu">
-          <Film />
+     <div class="card"
+      v-for="(film) in propFilm"
+      :key="propFilm.id"
+      >
+      <ul>
+          <li></li>
+          <li>Titolo originale</li>
+          <li>Lingua</li>
+          <li>Voto</li>
+      </ul>
+  </div>
       </div>
   </div>
 </template>
 
 <script>
 
-import axios from 'axios';
-import Film from './Film.vue'
+
+
 
 export default {
     nome: 'Main',
-    components:{
-        Film
+    data(){
+        films: propFilm
     },
-    data() {
-
-    },
-    methods: {
-        getApi(){
-            axios.get('https://api.themoviedb.org/3/search/movie?api_key=db7794d74f6d8ca357ea23c659300bfb&query=ritorno+al+futuro&language=it-IT')
-            .then( r => {
-                console.log('r',r);
-                
-            }).catch( e => {
-                console.log('e',e);
-            })
-        }
+    props:{
+        propFilm: Array
     }
+    
 }
 </script>
 
 <style lang="scss">
 
 .container-menu{
+    display: flex;
     margin-top: 15px;
+}
+.card{
+    width: 200px;
+    background-color: green;
+    
 }
 
 </style>
