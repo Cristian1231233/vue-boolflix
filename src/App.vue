@@ -1,7 +1,7 @@
 <template>
   <div>
    <Header />
-   <Main :films="propFilm" />
+   <Main :propFilm="films" />
   </div>
 </template>
 
