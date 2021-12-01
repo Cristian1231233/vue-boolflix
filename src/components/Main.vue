@@ -4,6 +4,7 @@
      <div class="card"
       v-for="(film) in propFilm"
       :key="film.id"
+      :propFilm="film"
       >
       <ul>
           <li>{{film.title}}</li>
