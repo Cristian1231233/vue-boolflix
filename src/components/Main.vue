@@ -3,10 +3,10 @@
       <div class="container-menu">
      <div class="card"
       v-for="(film) in propFilm"
-      :key="propFilm.id"
+      :key="film.id"
       >
       <ul>
-          <li></li>
+          <li>{{film.title}}</li>
           <li>Titolo originale</li>
           <li>Lingua</li>
           <li>Voto</li>
@@ -24,7 +24,7 @@
 export default {
     nome: 'Main',
     data(){
-        films: propFilm
+        
     },
     props:{
         propFilm: Array
