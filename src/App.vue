@@ -1,7 +1,7 @@
 <template>
   <div>
    <Header @attivaSearch = "ricercaDeiFilm" />
-   <Main :propFilm="films" :serieTv="serieTv" />
+   <Main :propFilm="films" :serieTv="serieTv" :image="image" />
   </div>
 </template>
 
@@ -20,9 +20,9 @@ export default {
   data() {
         return{
             films: [],
-            title: '',
+            title: 'ritorno',
             serieTv: [],
-            
+            image: 'https://files.slack.com/files-pri/T91QPE3BP-F02P6HKR6F7/it.png'
         }
     },
     methods: {

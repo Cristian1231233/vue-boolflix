@@ -11,7 +11,7 @@
         <ul>
           <li>{{film.title}}</li>
           <li>{{film.original_title}}</li>
-          <li>{{film.original_language}}</li>
+          <li><img :src="image" alt=""></li>
           <li>{{film.vote_average}}</li>
         </ul>
     </div>
@@ -27,7 +27,7 @@
         <ul>
           <li>{{serie.name}}</li>
           <li>{{serie.original_name}}</li>
-          <li>{{serie.original_language}}</li>
+          <li><img :src="image" alt=""></li>
           <li>{{serie.vote_average}}</li>
         </ul>
       </div>
@@ -50,7 +50,8 @@ export default {
     },
     props:{
         propFilm: Array,
-        serieTv: Array
+        serieTv: Array,
+        image: String
     },
     methods:{
        
