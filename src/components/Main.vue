@@ -1,18 +1,36 @@
 <template>
   <div class="menu">
+      <h2>Film</h2>
       <div class="container-menu">
+      
      <div class="card"
       v-for="(film) in propFilm"
       :key="film.id"
-      :propFilm="film"
+      
       >
-      <ul>
+        <ul>
           <li>{{film.title}}</li>
           <li>{{film.original_title}}</li>
           <li>{{film.original_language}}</li>
           <li>{{film.vote_average}}</li>
-      </ul>
-  </div>
+        </ul>
+    </div>
+      </div>
+      <h2>Serie TV</h2>
+      <div class="container-menu">
+      
+      <div class="card2"
+      v-for="(serie) in serieTv"
+      :key="serie.id"
+      
+      >
+        <ul>
+          <li>{{serie.name}}</li>
+          <li>{{serie.original_name}}</li>
+          <li>{{serie.original_language}}</li>
+          <li>{{serie.vote_average}}</li>
+        </ul>
+      </div>
       </div>
   </div>
 </template>
@@ -26,7 +44,8 @@ export default {
     nome: 'Main',
     
     props:{
-        propFilm: Array
+        propFilm: Array,
+        serieTv: Array
     }
     
 }
@@ -47,5 +66,12 @@ export default {
     }
     
 }
-
+.card2{
+    width: 200px;
+    background-color: green;
+    ul li{
+        list-style: none;
+    }
+    
+}
 </style>

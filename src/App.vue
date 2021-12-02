@@ -1,7 +1,7 @@
 <template>
   <div>
    <Header @attivaSearch = "ricercaDeiFilm" />
-   <Main :propFilm="films" />
+   <Main :propFilm="films" :serieTv="serieTv" />
   </div>
 </template>
 
@@ -20,7 +20,10 @@ export default {
   data() {
         return{
             films: [],
-            title: ''
+            title: '',
+            name: '',
+            serieTv: [],
+            
         }
     },
     methods: {
@@ -35,14 +38,31 @@ export default {
                 console.log('e',e);
             })
         },
+        getApi2(){
+            axios.get(`https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=${this.name}`)
+            .then( r => {
+                console.log('response',r);
+                this.serieTv = r.data.results;
+                console.log(this.serieTv);
+
+            }).catch( e => {
+                console.log('e',e);
+            })
+        },
         ricercaDeiFilm(textSearch){
+          
           console.log(textSearch);
           this.title = textSearch;
+          console.log('title',this.title);
+          this.name = textSearch;
+          console.log('name',this.name);
+         
           this.getApi();
         }
     },
     mounted() {
         this.getApi();
+        this.getApi2();
     },
   
 }
