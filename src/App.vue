@@ -22,7 +22,7 @@ export default {
             films: [],
             title: 'ritorno',
             serieTv: [],
-            image: 'https://files.slack.com/files-pri/T91QPE3BP-F02P6HKR6F7/it.png'
+            image: 'it.png'
         }
     },
     methods: {
