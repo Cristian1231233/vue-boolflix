@@ -20,7 +20,7 @@ export default {
   data() {
         return{
             films: [],
-            title: 'ritorno',
+            title: '',
             serieTv: [],
             
         }
@@ -54,9 +54,8 @@ export default {
           this.title = textSearch;
           console.log('title',this.title);
           
-          
-         
           this.getApi();
+          this.getApi2()
         }
     },
     mounted() {
