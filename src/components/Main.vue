@@ -11,7 +11,9 @@
         <ul>
           <li>{{film.title}}</li>
           <li>{{film.original_title}}</li>
-          <li>{{film.original_language}}</li>
+          <li><div>
+              <img src="https://files.slack.com/files-pri/T91QPE3BP-F02P6HKR6F7/it.png" alt="">
+              </div></li>
           <li>{{film.vote_average}}</li>
         </ul>
     </div>
@@ -32,6 +34,7 @@
         </ul>
       </div>
       </div>
+      
   </div>
 </template>
 
@@ -42,11 +45,16 @@
 
 export default {
     nome: 'Main',
-    
+    data(){
+        return{
+            
+        }
+    },
     props:{
         propFilm: Array,
         serieTv: Array
     }
+    
     
 }
 </script>
