@@ -13,7 +13,7 @@
       <div class="flip-card-front">
         <ul>
           <li v-if="film.poster_path"><img class="film" :src="`https://image.tmdb.org/t/p/w342/${film.poster_path}`" alt=""></li>
-          <li v-else><p>placeholder img</p></li>
+          <li v-else><p class="placeholder">placeholder img</p></li>
         </ul>
        </div>
        
@@ -23,8 +23,6 @@
           <li>{{film.original_title}}</li>
           <li v-if="film.original_language === 'it' || film.original_language === 'en'"><img class="flag" :src="require(`../assets/${film.original_language}.png`)" alt=""></li>
           <li v-else><p>{{film.original_language}}</p></li>
-          <li><i class="fas fa-star"></i></li>
-          <li>{{film.vote_average}}--> {{Math.round(film.vote_average / 2)}}</li>
           <li><i v-for="(item,index) in 5"
                :key="index"
                class="fa-star"
@@ -49,7 +47,7 @@
         <div class="flip-card-front">
         <ul>
           <li v-if="serie.poster_path"><img class="serie" :src="`https://image.tmdb.org/t/p/w342/${serie.poster_path}`" alt=""></li>
-          <li v-else><p>placeholder img</p></li>
+          <li v-else><p class="placeholder">placeholder img</p></li>
         </ul>
           </div>
           <div class="flip-card-back">
@@ -58,9 +56,6 @@
           <li>{{serie.original_name}}</li>
           <li v-if="serie.original_language === 'it' || serie.original_language === 'en'"><img class="flag" :src="require(`../assets/${serie.original_language}.png`)" alt=""></li>
           <li v-else><p>{{serie.original_language}}</p></li>
-          <!-- <li>{{serie.vote_average}}</li> -->
-          <li><i class="fas fa-star"></i></li>
-          <li>{{serie.vote_average}}--> {{Math.round(serie.vote_average / 2)}}</li>
           <li><i v-for="(item,index) in 5"
                :key="index"
                class="fa-star"
@@ -115,9 +110,10 @@ body{
     overflow: hidden;
     ul li{
         list-style: none;
-    }
-    
-    
+    } 
+}
+.placeholder{
+    color: white;
 }
 .testo{
     overflow-y: auto;
