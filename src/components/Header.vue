@@ -27,10 +27,16 @@ export default {
 
 header{
     height: 60px;
-    background-color: gray;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .logo{
+        color: rgb(201, 13, 13);
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-left: 20px;
+    }
 }
 .searchbar-botton{
     display: flex;
