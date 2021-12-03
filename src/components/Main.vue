@@ -112,6 +112,7 @@ body{
 }
 .card{
     border: 1px solid white;
+    overflow: hidden;
     ul li{
         list-style: none;
     }
@@ -126,7 +127,7 @@ body{
     height: 100%;
 }
 .card2{
-    
+    overflow: hidden;
     ul li{
         list-style: none;
     }
